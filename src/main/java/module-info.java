@@ -3,7 +3,8 @@ module ie.setu.bogomusic {
     requires javafx.fxml;
 
 
-    opens ie.setu.bogomusic to javafx.fxml;
+    opens ie.setu.bogomusic.main to javafx.fxml;
 
+    exports ie.setu.bogomusic.main;
     exports ie.setu.bogomusic.controller;
 }
