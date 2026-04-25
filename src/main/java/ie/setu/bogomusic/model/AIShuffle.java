@@ -1,4 +1,4 @@
-package model;
+package ie.setu.bogomusic.model;
 
 public class AIShuffle {
 

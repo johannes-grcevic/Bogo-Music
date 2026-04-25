@@ -1,5 +1,9 @@
 package model;
 
+import ie.setu.bogomusic.model.CommunityRoom;
+import ie.setu.bogomusic.model.Poll;
+import ie.setu.bogomusic.model.Track;
+import ie.setu.bogomusic.model.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
