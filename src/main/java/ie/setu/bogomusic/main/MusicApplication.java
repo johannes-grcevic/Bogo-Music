@@ -16,5 +16,11 @@ public class MusicApplication extends Application {
         stage.setTitle("Bogo Music");
         stage.setScene(scene);
         stage.show();
+
+        stage.setOnCloseRequest(_ -> exit());
+    }
+
+    public static void exit() {
+        System.exit(0);
     }
 }
