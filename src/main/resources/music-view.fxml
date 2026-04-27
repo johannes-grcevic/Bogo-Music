@@ -121,10 +121,12 @@
                         <Insets />
                      </StackPane.margin>
                      <children>
-                        <Button fx:id="seekBackButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="182.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
-                        <Button fx:id="playPauseButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="221.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
-                        <Button fx:id="seekForwardButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="260.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
-                        <Button fx:id="volumeButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="1119.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="aiShuffleButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="182.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="seekBackButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="212.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="playPauseButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="242.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="seekForwardButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="272.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="volumeButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="1105.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="shuffleButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="1142.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
                      </children>
                   </AnchorPane>
                </children>
@@ -143,7 +145,7 @@
             <Button fx:id="albumButton" graphicTextGap="8.0" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" stylesheets="@style.css" text="Albums" />
             <Button fx:id="songButton" graphicTextGap="8.0" layoutX="25.0" layoutY="250.0" mnemonicParsing="false" stylesheets="@style.css" text="Songs" />
             <Button fx:id="profileButton" graphicTextGap="8.0" layoutX="25.0" layoutY="300.0" mnemonicParsing="false" stylesheets="@style.css" text="Profile" />
-            <Button fx:id="communityRoomButton" graphicTextGap="8.0" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" stylesheets="@style.css" text="Community Rooms" />
+            <Button fx:id="importMusicButton" graphicTextGap="8.0" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" stylesheets="@style.css" text="Import Music" />
             <Separator layoutX="203.0" layoutY="24.0" opacity="0.79" orientation="VERTICAL" prefHeight="686.0" prefWidth="25.0" />
             <Label layoutX="30.0" layoutY="409.0" text="DISCOVER">
                <font>
@@ -154,7 +156,7 @@
             <Button fx:id="aiRadioButton" graphicTextGap="8.0" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" stylesheets="@style.css" text="AI Radio" />
             <Button fx:id="forYouButton" graphicTextGap="8.0" layoutX="25.0" layoutY="550.0" mnemonicParsing="false" stylesheets="@style.css" text="For You" />
             <Button fx:id="exploreButton" graphicTextGap="8.0" layoutX="25.0" layoutY="600.0" mnemonicParsing="false" stylesheets="@style.css" text="Explore" />
-            <Button fx:id="importMusicButton" graphicTextGap="8.0" layoutX="25.0" layoutY="650.0" mnemonicParsing="false" stylesheets="@style.css" text="Import Music" />
+            <Button fx:id="communityRoomButton" graphicTextGap="8.0" layoutX="25.0" layoutY="650.0" mnemonicParsing="false" stylesheets="@style.css" text="Community Rooms" />
          </children>
       </AnchorPane>
    </left>

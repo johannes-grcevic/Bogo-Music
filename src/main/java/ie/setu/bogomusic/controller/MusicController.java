@@ -31,7 +31,7 @@ public class MusicController implements Initializable {
     @FXML
     private Slider playbackSlider;
     @FXML
-    private Button seekBackButton, seekForwardButton, playPauseButton, volumeButton;
+    private Button seekBackButton, seekForwardButton, playPauseButton, aiShuffleButton, shuffleButton, volumeButton;
 
     @FXML
     private Button playlistButton, artistButton, albumButton, songButton, profileButton, communityRoomButton;
@@ -59,7 +59,7 @@ public class MusicController implements Initializable {
 
         playingSongImageView.setImage(new Image(
                 Objects.requireNonNull(
-                        getClass().getResource("/the-strokes.jpg")).toExternalForm(), 32, 32, true, true));
+                        getClass().getResource("/images/the-strokes.jpg")).toExternalForm(), 32, 32, true, true));
 
         Rectangle clip = new Rectangle(playingSongImageView.getImage().getWidth(), playingSongImageView.getImage().getHeight());
         clip.setArcWidth(60);
@@ -68,9 +68,11 @@ public class MusicController implements Initializable {
         playerTile.setGraphic(playingSongImageView);
 
         // player buttons
-        seekBackButton.setGraphic(new FontIcon(Feather.ARROW_LEFT));
-        seekForwardButton.setGraphic(new FontIcon(Feather.ARROW_RIGHT));
+        seekBackButton.setGraphic(new FontIcon(Feather.SKIP_BACK));
+        seekForwardButton.setGraphic(new FontIcon(Feather.SKIP_FORWARD));
         playPauseButton.setGraphic(new FontIcon(Feather.PAUSE));
+        shuffleButton.setGraphic(new FontIcon(Feather.REPEAT));
+        aiShuffleButton.setGraphic(new FontIcon(Feather.SHUFFLE));
         volumeButton.setGraphic(new FontIcon(Feather.VOLUME_2));
 
         // sidebar buttons
