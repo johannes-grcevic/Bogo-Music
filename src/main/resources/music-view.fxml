@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import atlantafx.base.controls.CustomTextField?>
+<?import atlantafx.base.controls.Tile?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.setu.bogomusic.controller.MusicController">
    <top>
@@ -81,7 +89,7 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <CustomTextField fx:id="searchBar" layoutX="431.0" layoutY="57.0" prefHeight="36.0" prefWidth="338.0" promptText="Search">
+            <CustomTextField fx:id="searchBar" layoutX="532.0" layoutY="57.0" prefHeight="36.0" prefWidth="338.0" promptText="Search">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -95,9 +103,59 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane layoutX="-1.0" layoutY="184.0">
+               <children>
+                  <Tile fx:id="playerTile" description="The Strokes" prefHeight="76.0" prefWidth="1206.0" styleClass="player-tile" stylesheets="@style.css" title="Machu Picchu" />
+                  <AnchorPane StackPane.alignment="CENTER">
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                     <children>
+                        <Slider fx:id="playbackSlider" blockIncrement="1.0" focusTraversable="false" layoutX="333.0" layoutY="28.0" max="10.0" mouseTransparent="true" prefHeight="20.0" prefWidth="753.0" styleClass="playback-bar" stylesheets="@style.css" value="7.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane StackPane.alignment="CENTER">
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                     <children>
+                        <Button fx:id="seekBackButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="182.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="playPauseButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="221.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="seekForwardButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="260.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                        <Button fx:id="volumeButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="1119.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" stylesheets="@style.css" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children></AnchorPane>
    </bottom>
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="30.0" layoutY="57.0" text="LIBRARY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="playlistButton" graphicTextGap="8.0" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" stylesheets="@style.css" text="Playlists" />
+            <Button fx:id="artistButton" graphicTextGap="8.0" layoutX="25.0" layoutY="150.0" mnemonicParsing="false" stylesheets="@style.css" text="Artists" />
+            <Button fx:id="albumButton" graphicTextGap="8.0" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" stylesheets="@style.css" text="Albums" />
+            <Button fx:id="songButton" graphicTextGap="8.0" layoutX="25.0" layoutY="250.0" mnemonicParsing="false" stylesheets="@style.css" text="Songs" />
+            <Button fx:id="profileButton" graphicTextGap="8.0" layoutX="25.0" layoutY="300.0" mnemonicParsing="false" stylesheets="@style.css" text="Profile" />
+            <Button fx:id="communityRoomButton" graphicTextGap="8.0" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" stylesheets="@style.css" text="Community Rooms" />
+            <Separator layoutX="203.0" layoutY="24.0" opacity="0.79" orientation="VERTICAL" prefHeight="686.0" prefWidth="25.0" />
+            <Label layoutX="30.0" layoutY="409.0" text="DISCOVER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="musicTwinButton" graphicTextGap="8.0" layoutX="25.0" layoutY="450.0" mnemonicParsing="false" stylesheets="@style.css" text="Music Twin" />
+            <Button fx:id="aiRadioButton" graphicTextGap="8.0" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" stylesheets="@style.css" text="AI Radio" />
+            <Button fx:id="forYouButton" graphicTextGap="8.0" layoutX="25.0" layoutY="550.0" mnemonicParsing="false" stylesheets="@style.css" text="For You" />
+            <Button fx:id="exploreButton" graphicTextGap="8.0" layoutX="25.0" layoutY="600.0" mnemonicParsing="false" stylesheets="@style.css" text="Explore" />
+            <Button fx:id="importMusicButton" graphicTextGap="8.0" layoutX="25.0" layoutY="650.0" mnemonicParsing="false" stylesheets="@style.css" text="Import Music" />
+         </children>
+      </AnchorPane>
    </left>
 </BorderPane>
