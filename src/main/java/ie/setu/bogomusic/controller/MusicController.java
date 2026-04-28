@@ -27,16 +27,17 @@ public class MusicController implements Initializable {
     @FXML
     private CustomTextField searchBar;
     @FXML
-    Tile playerTile;
+    private Tile playerTile;
     @FXML
-    private Slider playbackSlider;
-    @FXML
-    private Button seekBackButton, seekForwardButton, playPauseButton, aiShuffleButton, shuffleButton, volumeButton;
-
+    private Button musicTwinButton, aiRadioButton, forYouButton, exploreButton, importMusicButton;
     @FXML
     private Button playlistButton, artistButton, albumButton, songButton, profileButton, communityRoomButton;
     @FXML
-    private Button musicTwinButton, aiRadioButton, forYouButton, exploreButton, importMusicButton;
+    private Button seekBackButton, seekForwardButton, playPauseButton, aiShuffleButton, shuffleButton, volumeButton;
+    @FXML
+    private Slider playbackSlider;
+    @FXML
+    private Button backButton, forwardButton;
 
     private final ImageView playingSongImageView = new ImageView();
 
@@ -47,7 +48,10 @@ public class MusicController implements Initializable {
 
     private void onBorderPaneMouseClicked(MouseEvent event) {
         // deselect the search bar
-        borderPane.requestFocus();
+        if (searchBar.isFocused()) {
+            searchBar.clear();
+            borderPane.requestFocus();
+        }
     }
 
     @Override
@@ -77,15 +81,18 @@ public class MusicController implements Initializable {
 
         // sidebar buttons
         playlistButton.setGraphic(new FontIcon(Feather.PLAY));
-        aiRadioButton.setGraphic(new FontIcon(Feather.PLAY_CIRCLE));
+        aiRadioButton.setGraphic(new FontIcon(Feather.RADIO));
         artistButton.setGraphic(new FontIcon(Feather.USERS));
         albumButton.setGraphic(new FontIcon(Feather.FOLDER));
-        songButton.setGraphic(new FontIcon(Feather.PLAY_CIRCLE));
+        songButton.setGraphic(new FontIcon(Feather.MUSIC));
         profileButton.setGraphic(new FontIcon(Feather.USER));
         communityRoomButton.setGraphic(new FontIcon(Feather.MESSAGE_SQUARE));
         musicTwinButton.setGraphic(new FontIcon(Feather.DISC));
         forYouButton.setGraphic(new FontIcon(Feather.HEART));
         exploreButton.setGraphic(new FontIcon(Feather.EYE));
         importMusicButton.setGraphic(new FontIcon(Feather.FOLDER_PLUS));
+
+        backButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        forwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
     }
 }
