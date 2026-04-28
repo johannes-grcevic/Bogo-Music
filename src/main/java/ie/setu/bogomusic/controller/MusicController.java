@@ -4,6 +4,7 @@ import atlantafx.base.controls.Tile;
 import ie.setu.bogomusic.main.MusicApplication;
 
 import atlantafx.base.controls.CustomTextField;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Slider;
@@ -11,6 +12,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import org.kordamp.ikonli.feather.Feather;
 import org.kordamp.ikonli.javafx.FontIcon;
@@ -38,7 +41,10 @@ public class MusicController implements Initializable {
     @FXML
     private Slider playbackSlider;
     @FXML
-    private Button backButton, forwardButton, albumBackButton, albumForwardButton;
+    private Button backButton, forwardButton, newMusicBackButton, newMusicForwardButton;
+
+    @FXML
+    private HBox playlistImageContainer;
 
     private final ImageView playingSongImageView = new ImageView();
 
@@ -93,9 +99,21 @@ public class MusicController implements Initializable {
         exploreButton.setGraphic(new FontIcon(Feather.EYE));
         importMusicButton.setGraphic(new FontIcon(Feather.FOLDER_PLUS));
 
+        // main buttons
         backButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
         forwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
-        albumBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
-        albumForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+        newMusicBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        newMusicForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+        //albumBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        //albumForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+
+        for (Node child : playlistImageContainer.getChildren()) {
+            if (child instanceof ImageView imageView) {
+                Rectangle cornerClip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
+                cornerClip.setArcWidth(30);
+                cornerClip.setArcHeight(30);
+                imageView.setClip(cornerClip);
+            }
+        }
     }
 }
