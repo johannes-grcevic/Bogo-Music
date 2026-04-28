@@ -5,6 +5,7 @@ import ie.setu.bogomusic.main.MusicApplication;
 
 import atlantafx.base.controls.CustomTextField;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,7 +38,7 @@ public class MusicController implements Initializable {
     @FXML
     private Slider playbackSlider;
     @FXML
-    private Button backButton, forwardButton;
+    private Button backButton, forwardButton, albumBackButton, albumForwardButton;
 
     private final ImageView playingSongImageView = new ImageView();
 
@@ -94,5 +95,7 @@ public class MusicController implements Initializable {
 
         backButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
         forwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+        albumBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        albumForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
     }
 }

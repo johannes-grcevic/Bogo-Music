@@ -14,7 +14,7 @@ public class MusicApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MusicApplication.class.getResource("/music-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load());
 
         // set the app icon
         stage.getIcons().add(new Image(Objects.requireNonNull(MusicApplication.class.getResource("/images/icon.png")).toExternalForm(), 64, 64, true, true));
@@ -23,6 +23,7 @@ public class MusicApplication extends Application {
         Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
 
         stage.setTitle("Bogo Music");
+        stage.sizeToScene(); // matches window size to the FXML pref size
         stage.setScene(scene);
         stage.show();
 
