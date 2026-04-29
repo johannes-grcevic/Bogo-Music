@@ -146,7 +146,7 @@ public class MusicController implements Initializable {
             if (!(child instanceof Tile tile)) continue;
 
             // set the first tile as playing, otherwise not playing
-            if (i == 1) {
+            if (i == 0) {
                 tile.setGraphic(new FontIcon(Feather.PAUSE));
             }
             else {

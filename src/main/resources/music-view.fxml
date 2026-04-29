@@ -341,7 +341,7 @@
                   <Insets bottom="100.0" right="2.0" top="-35.0" />
                </padding>
             </HBox>
-            <VBox fx:id="newMusicContainer" alignment="CENTER_RIGHT" prefHeight="564.0" prefWidth="253.0" spacing="20.0">
+            <VBox alignment="CENTER_RIGHT" prefHeight="564.0" prefWidth="253.0" spacing="20.0">
                <children>
                   <HBox alignment="TOP_RIGHT">
                      <children>
@@ -370,7 +370,7 @@
                         <Insets top="-10.0" />
                      </padding>
                   </HBox>
-                  <VBox prefWidth="253.0" spacing="20.0">
+                  <VBox fx:id="newMusicContainer" prefWidth="253.0" spacing="20.0">
                      <children>
                         <Tile description="The Strokes" styleClass="sidebar-active-tile" stylesheets="@style.css" title="Machu Picchu">
                            <effect>
