@@ -6,14 +6,12 @@ import ie.setu.bogomusic.main.MusicApplication;
 import atlantafx.base.controls.CustomTextField;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import org.kordamp.ikonli.feather.Feather;
 import org.kordamp.ikonli.javafx.FontIcon;
@@ -41,12 +39,12 @@ public class MusicController implements Initializable {
     @FXML
     private Slider playbackSlider;
     @FXML
-    private Button backButton, forwardButton, newMusicBackButton, newMusicForwardButton;
+    private Button backButton, forwardButton, newMusicBackButton, newMusicForwardButton, playlistBackButton, playlistForwardButton, albumBackButton, albumForwardButton;
+    @FXML
+    private Button profileSettingsButton;
 
     @FXML
-    private HBox playlistImageContainer;
-
-    private final ImageView playingSongImageView = new ImageView();
+    private HBox playlistImageContainer, albumImageContainer;
 
     @FXML
     public void exitApplication() {
@@ -61,6 +59,13 @@ public class MusicController implements Initializable {
         }
     }
 
+    private void setImageClip(Node node, double width, double height) {
+        Rectangle clip = new Rectangle(width, height);
+        clip.setArcWidth(30);
+        clip.setArcHeight(30);
+        node.setClip(clip);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         borderPane.setOnMouseClicked(this::onBorderPaneMouseClicked);
@@ -68,15 +73,20 @@ public class MusicController implements Initializable {
         searchBar.setLeft(new FontIcon(Feather.SEARCH));
         searchBar.setFocusTraversable(false);
 
-        playingSongImageView.setImage(new Image(
-                Objects.requireNonNull(
-                        getClass().getResource("/images/the-strokes.jpg")).toExternalForm(), 32, 32, true, true));
+        // player tile
+        ImageView playingSongImageView = new ImageView(new Image(Objects.requireNonNull(
+                        getClass().getResourceAsStream("/images/the-strokes.jpg")), 32, 32, true, true));
 
-        Rectangle clip = new Rectangle(playingSongImageView.getImage().getWidth(), playingSongImageView.getImage().getHeight());
-        clip.setArcWidth(60);
-        clip.setArcHeight(60);
-        playingSongImageView.setClip(clip);
+        Rectangle playerIconClip = new Rectangle(playingSongImageView.getImage().getWidth(), playingSongImageView.getImage().getHeight());
+        setImageClip(playingSongImageView, playerIconClip.getWidth(), playerIconClip.getHeight());
         playerTile.setGraphic(playingSongImageView);
+
+        // profile settings button
+        ImageView profileImageView = new ImageView(new Image(Objects.requireNonNull(
+                getClass().getResourceAsStream("/images/profile_icon.png")),
+                48, 48, true, true));
+
+        profileSettingsButton.setGraphic(profileImageView);
 
         // player buttons
         seekBackButton.setGraphic(new FontIcon(Feather.SKIP_BACK));
@@ -93,26 +103,36 @@ public class MusicController implements Initializable {
         albumButton.setGraphic(new FontIcon(Feather.FOLDER));
         songButton.setGraphic(new FontIcon(Feather.MUSIC));
         profileButton.setGraphic(new FontIcon(Feather.USER));
-        communityRoomButton.setGraphic(new FontIcon(Feather.MESSAGE_SQUARE));
+        importMusicButton.setGraphic(new FontIcon(Feather.FOLDER_PLUS));
+
         musicTwinButton.setGraphic(new FontIcon(Feather.DISC));
         forYouButton.setGraphic(new FontIcon(Feather.HEART));
         exploreButton.setGraphic(new FontIcon(Feather.EYE));
-        importMusicButton.setGraphic(new FontIcon(Feather.FOLDER_PLUS));
+        communityRoomButton.setGraphic(new FontIcon(Feather.MESSAGE_SQUARE));
 
-        // main buttons
+        // main center buttons
         backButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
         forwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
         newMusicBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
         newMusicForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
-        //albumBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
-        //albumForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+        playlistBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        playlistForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
+        albumBackButton.setGraphic(new FontIcon(Feather.CHEVRON_LEFT));
+        albumForwardButton.setGraphic(new FontIcon(Feather.CHEVRON_RIGHT));
 
+        // playlist images
         for (Node child : playlistImageContainer.getChildren()) {
             if (child instanceof ImageView imageView) {
-                Rectangle cornerClip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
-                cornerClip.setArcWidth(30);
-                cornerClip.setArcHeight(30);
-                imageView.setClip(cornerClip);
+                Rectangle playlistImageClip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
+                setImageClip(imageView, playlistImageClip.getWidth(), playlistImageClip.getHeight());
+            }
+        }
+
+        // album images
+        for (Node child : albumImageContainer.getChildren()) {
+            if (child instanceof ImageView imageView) {
+                Rectangle albumImageClip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
+                setImageClip(imageView, albumImageClip.getWidth(), albumImageClip.getHeight());
             }
         }
     }
