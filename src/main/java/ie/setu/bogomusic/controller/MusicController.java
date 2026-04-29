@@ -4,6 +4,7 @@ import atlantafx.base.controls.Tile;
 import ie.setu.bogomusic.main.MusicApplication;
 
 import atlantafx.base.controls.CustomTextField;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import org.kordamp.ikonli.feather.Feather;
 import org.kordamp.ikonli.javafx.FontIcon;
@@ -45,6 +47,8 @@ public class MusicController implements Initializable {
 
     @FXML
     private HBox playlistImageContainer, albumImageContainer;
+    @FXML
+    private VBox newMusicContainer;
 
     @FXML
     public void exitApplication() {
@@ -84,7 +88,7 @@ public class MusicController implements Initializable {
         // profile settings button
         ImageView profileImageView = new ImageView(new Image(Objects.requireNonNull(
                 getClass().getResourceAsStream("/images/profile_icon.png")),
-                48, 48, true, true));
+                42, 42, true, true));
 
         profileSettingsButton.setGraphic(profileImageView);
 
@@ -133,6 +137,20 @@ public class MusicController implements Initializable {
             if (child instanceof ImageView imageView) {
                 Rectangle albumImageClip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
                 setImageClip(imageView, albumImageClip.getWidth(), albumImageClip.getHeight());
+            }
+        }
+
+        ObservableList<Node> children = newMusicContainer.getChildren();
+        for (int i = 0; i < children.size(); i++) {
+            Node child = children.get(i);
+            if (!(child instanceof Tile tile)) continue;
+
+            // set the first tile as playing, otherwise not playing
+            if (i == 1) {
+                tile.setGraphic(new FontIcon(Feather.PAUSE));
+            }
+            else {
+                tile.setGraphic(new FontIcon(Feather.PLAY));
             }
         }
     }
