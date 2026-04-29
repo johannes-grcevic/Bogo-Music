@@ -79,7 +79,7 @@ public class MusicController implements Initializable {
 
         // player tile
         ImageView playingSongImageView = new ImageView(new Image(Objects.requireNonNull(
-                        getClass().getResourceAsStream("/images/the-strokes.jpg")), 32, 32, true, true));
+                        getClass().getResourceAsStream("/images/albums/cover_angles_the_strokes.jpg")), 32, 32, true, true));
 
         Rectangle playerIconClip = new Rectangle(playingSongImageView.getImage().getWidth(), playingSongImageView.getImage().getHeight());
         setImageClip(playingSongImageView, playerIconClip.getWidth(), playerIconClip.getHeight());
@@ -87,7 +87,7 @@ public class MusicController implements Initializable {
 
         // profile settings button
         ImageView profileImageView = new ImageView(new Image(Objects.requireNonNull(
-                getClass().getResourceAsStream("/images/profile_icon.png")),
+                getClass().getResourceAsStream("/images/profile/profile_icon.png")),
                 42, 42, true, true));
 
         profileSettingsButton.setGraphic(profileImageView);

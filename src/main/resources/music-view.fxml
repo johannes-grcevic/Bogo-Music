@@ -64,7 +64,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="230.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/play_icon.png" />
+                              <Image url="@images/background/background_play_icon.png" />
                            </image>
                            <StackPane.margin>
                               <Insets bottom="-10.0" left="75.0" />
@@ -104,23 +104,26 @@
                      <children>
                         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/playlists/cover_summer_hits.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/playlists/cover_throwback_thursday.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="230.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/playlists/cover_chillout_classics.png" />
                            </image>
                         </ImageView>
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets top="6.0" />
+                     </padding>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT">
                      <children>
@@ -147,17 +150,17 @@
                      <children>
                         <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/albums/cover_horizons.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/albums/cover_future_memories.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/placeholder.png" />
+                              <Image url="@images/albums/cover_future_state.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -254,7 +257,7 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Next" />
                   <MenuItem mnemonicParsing="false" text="Previous" />
-                  <MenuItem mnemonicParsing="false" text="Seek Foward" />
+                  <MenuItem mnemonicParsing="false" text="Seek Forward" />
                   <MenuItem mnemonicParsing="false" text="Seek Backward" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Shuffle" />
@@ -324,7 +327,7 @@
    <right>
       <VBox alignment="TOP_RIGHT" prefHeight="660.0" prefWidth="303.0">
          <children>
-            <HBox alignment="TOP_RIGHT" prefWidth="253.0">
+            <HBox alignment="TOP_RIGHT" fillHeight="false" prefWidth="253.0">
                <children>
                   <Button fx:id="profileSettingsButton" graphicTextGap="8.0" mnemonicParsing="false" styleClass="sidebar-button" stylesheets="@style.css" text="John Doe" textFill="#ffffffcc" />
                </children>
@@ -335,46 +338,63 @@
                   <Insets />
                </VBox.margin>
                <padding>
-                  <Insets bottom="90.0" right="2.0" top="-35.0" />
+                  <Insets bottom="100.0" right="2.0" top="-35.0" />
                </padding>
             </HBox>
-            <VBox fx:id="newMusicContainer" alignment="CENTER_RIGHT" prefHeight="646.0" prefWidth="253.0" spacing="20.0">
+            <VBox fx:id="newMusicContainer" alignment="CENTER_RIGHT" prefHeight="564.0" prefWidth="253.0" spacing="20.0">
                <children>
                   <HBox alignment="TOP_RIGHT">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" opacity="0.8" prefHeight="36.0" prefWidth="105.0" text="New Discoveries ">
-                           <padding>
-                              <Insets top="20.0" />
-                           </padding></Label>
-                        <Button fx:id="newMusicBackButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" styleClass="seek-button" stylesheets="@style.css">
+                        <Label alignment="BOTTOM_CENTER" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" opacity="0.8" prefHeight="40.0" prefWidth="105.0" text="New Discoveries ">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Label>
+                        <Button fx:id="newMusicBackButton" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" styleClass="seek-button" stylesheets="@style.css">
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
                         </Button>
-                        <Button fx:id="newMusicForwardButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" disable="true" graphicTextGap="0.0" mnemonicParsing="false" styleClass="seek-button" stylesheets="@style.css">
+                        <Button fx:id="newMusicForwardButton" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" disable="true" graphicTextGap="0.0" mnemonicParsing="false" styleClass="seek-button" stylesheets="@style.css">
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
+                     <padding>
+                        <Insets top="-10.0" />
+                     </padding>
                   </HBox>
-                  <Tile description="The Strokes" styleClass="sidebar-active-tile" stylesheets="@style.css" title="Machu Picchu" VBox.vgrow="NEVER">
-                     <effect>
-                        <Bloom threshold="0.2" />
-                     </effect></Tile>
-                  <Tile description="Stressed Out" styleClass="sidebar-tile" stylesheets="@style.css" title="Twenty One Pilots" />
-                  <Tile description="The Strokes" layoutX="10.0" layoutY="360.0" styleClass="sidebar-tile" stylesheets="@style.css" title="Automatic Stop" />
-                  <Tile description="Imagine Dragons" layoutX="10.0" layoutY="408.0" styleClass="sidebar-tile" stylesheets="@style.css" title="Bones" />
-                  <Tile description="Maroon 5" layoutX="10.0" layoutY="455.0" styleClass="sidebar-tile" stylesheets="@style.css" title="This Summer" />
+                  <VBox prefWidth="253.0" spacing="20.0">
+                     <children>
+                        <Tile description="The Strokes" styleClass="sidebar-active-tile" stylesheets="@style.css" title="Machu Picchu">
+                           <effect>
+                              <Bloom threshold="0.2" />
+                           </effect>
+                        </Tile>
+                        <Tile description="Stressed Out" styleClass="sidebar-tile" stylesheets="@style.css" title="Twenty One Pilots" />
+                        <Tile description="The Strokes" styleClass="sidebar-tile" stylesheets="@style.css" title="Automatic Stop" />
+                        <Tile description="Imagine Dragons" styleClass="sidebar-tile" stylesheets="@style.css" title="Bones" />
+                        <Tile description="Maroon 5" styleClass="sidebar-tile" stylesheets="@style.css" title="This Summer" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
                </children>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="-20.0" />
                </VBox.margin>
-               <padding>
-                  <Insets top="-25.0" />
-               </padding>
             </VBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
          <padding>
             <Insets right="50.0" top="50.0" />
          </padding>

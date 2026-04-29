@@ -17,7 +17,7 @@ public class MusicApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
         // set the app icon
-        stage.getIcons().add(new Image(Objects.requireNonNull(MusicApplication.class.getResource("/images/icon.png")).toExternalForm(), 64, 64, true, true));
+        stage.getIcons().add(new Image(Objects.requireNonNull(MusicApplication.class.getResource("/images/app/app_icon.png")).toExternalForm(), 64, 64, true, true));
 
         // Set the app theme
         Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
