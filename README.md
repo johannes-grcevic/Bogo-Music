@@ -1,16 +1,13 @@
 # Bogo Music
 
 ## Disclaimer
-
 Bogo Music is a concept project created to demonstrate product design and technical planning. The repository includes limited implementation (skeleton code and unit tests), but the application is not fully functional.
-
 
 Bogo Music is a cross-platform music streaming service focused on
 high-fidelity audio and social interaction. It provides a flexible,
 community-driven alternative to traditional streaming platforms.
 
 ## Overview
-
 Bogo Music combines lossless audio streaming with real-time social
 features and full library portability. The platform removes common
 limitations such as platform lock-in, low audio quality on free tiers,
@@ -19,7 +16,6 @@ and limited user interaction.
 ## Key Features
 
 ### Live Community Rooms
-
 Users can listen to music together in real time with chat, reactions,
 and voting systems for collaborative playback.
 
@@ -70,9 +66,7 @@ discovery and reducing repetition.
 -   Tablets and smart devices
 
 ## Prototype
-
-A prototype demonstrates core features and user flows.
-(Add tool, screenshots, or link here)
+![Bogo Music App Prototype](https://github.com/johannes-grcevic/Bogo-Music/blob/main/src/main/resources/images/concept/bogo_music_concept.png "Bogo Music App Prototype")
 
 ## Authors
 
