@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.setu.bogomusic.controller.MusicController">
+<BorderPane fx:id="borderPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/26.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.setu.bogomusic.controller.MusicController">
    <center>
       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
